@@ -19,28 +19,23 @@ export default function CreateSongPage() {
     const childName = formData.get("childName") as string;
     const genre = formData.get("genre") as string;
     const theme = formData.get("theme") as string;
+    const email = formData.get("email") as string;
 
     try {
-      console.log("Sending Data:", { childName, genre, theme });
-
       const response = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ childName, genre, theme }),
+        body: JSON.stringify({ childName, genre, theme, email }),
       });
 
       const data = await response.json();
-      console.log("Response Data:", data);
 
       if (response.ok && data.url) {
-        console.log("Redirecting to Stripe Checkout:", data.url);
-        window.location.href = data.url;
+        window.location.href = data.url; // Redirect to Stripe Checkout
       } else {
-        console.error("API Error:", data.error || "Something went wrong.");
         setError(data.error || "Failed to create Stripe Checkout session.");
       }
-    } catch (fetchError) {
-      console.error("Fetch Error:", fetchError);
+    } catch (err) {
       setError("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -50,24 +45,22 @@ export default function CreateSongPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center justify-center p-4">
       <div className="max-w-4xl w-full space-y-8">
-        {/* Page Header */}
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
-            Compose Your Child&apos;s Classic
+            Compose Your Child's Classic
           </h1>
           <p className="text-lg text-gray-600">
-            Let&apos;s create a timeless musical masterpiece starring your little one!
+            Let’s create a timeless musical masterpiece starring your little one!
           </p>
         </div>
 
-        {/* Form Card */}
         <Card className="backdrop-blur-lg bg-white/80 shadow-xl rounded-2xl">
           <CardContent className="p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Child's Name Field */}
               <div className="space-y-2">
                 <Label htmlFor="childName" className="text-lg font-medium text-gray-700">
-                  Child&apos;s Name
+                  Child's Name
                 </Label>
                 <Input
                   id="childName"
@@ -106,6 +99,21 @@ export default function CreateSongPage() {
                 />
               </div>
 
+              {/* Delivery Email Address Field */}
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-lg font-medium text-gray-700">
+                  Delivery Email Address
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Enter the email address where you want to send the song"
+                  className="py-3 rounded-lg"
+                />
+              </div>
+
               {/* Submit Button */}
               <Button
                 type="submit"
@@ -118,7 +126,6 @@ export default function CreateSongPage() {
           </CardContent>
         </Card>
 
-        {/* Error Message */}
         {error && (
           <div className="text-center text-red-500 font-semibold">
             <p>{error}</p>

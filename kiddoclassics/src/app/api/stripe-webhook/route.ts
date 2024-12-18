@@ -10,7 +10,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2024-04-10",
 });
 
-// Convert request body to Buffer without using `as any`
+// Helper to convert request body to Buffer
 async function getRawBody(req: NextRequest): Promise<Buffer> {
   const chunks: Uint8Array[] = [];
   const reader = req.body?.getReader();
@@ -34,10 +34,10 @@ export async function POST(req: NextRequest) {
   let event: Stripe.Event;
 
   try {
-    // Convert raw body into Buffer safely
+    // Convert raw body into Buffer
     const rawBody = await getRawBody(req);
 
-    // Validate Stripe webhook
+    // Validate the webhook event
     event = stripe.webhooks.constructEvent(
       rawBody,
       sig,
@@ -49,17 +49,36 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: `Webhook Error: ${message}` }, { status: 400 });
   }
 
-  // Handle "checkout.session.completed" event
   if (event.type === "checkout.session.completed") {
     try {
       const session = event.data.object as Stripe.Checkout.Session;
-
       console.log("Checkout session completed:", session.id);
 
-      // Update Supabase with session status
+      // Retrieve email from session payload or fetch additional details if missing
+      let customerEmail =
+        session.customer_details?.email || session.customer_email || null;
+
+      if (!customerEmail) {
+        console.log("Email not found in session, fetching full session details...");
+        const fullSession = await stripe.checkout.sessions.retrieve(session.id);
+        customerEmail =
+          fullSession.customer_details?.email || fullSession.customer_email || null;
+
+        if (!customerEmail && fullSession.customer) {
+          console.log("Fetching customer details...");
+          const customer = (await stripe.customers.retrieve(
+            fullSession.customer as string
+          )) as Stripe.Customer;
+          customerEmail = customer.email || null;
+        }
+      }
+
+      console.log(`Resolved Customer Email: ${customerEmail}`);
+
+      // Update Supabase with email and status
       const { error: supabaseError } = await supabase
         .from("sessions")
-        .update({ status: "pending_generation" })
+        .update({ email: customerEmail, status: "pending_generation" })
         .eq("session_id", session.id);
 
       if (supabaseError) {
@@ -81,6 +100,6 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Return a successful response
+  // Acknowledge the event
   return NextResponse.json({ received: true }, { status: 200 });
 }

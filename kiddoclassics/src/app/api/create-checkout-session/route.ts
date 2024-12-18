@@ -1,26 +1,20 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
-import https from "https";
+import { supabase } from "@/lib/supabaseClient";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2024-04-10",
 });
 
-// Custom HTTPS Agent for bypassing SSL verification locally
-const httpsAgent = new https.Agent({
-  rejectUnauthorized: false, // Temporarily bypass SSL verification (local only)
-});
-
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   console.log("ENV Check: SUPABASE_URL:", process.env.SUPABASE_URL);
-  console.log("ENV Check: SUPABASE_ANON_KEY:", process.env.SUPABASE_ANON_KEY);
 
   try {
-    // Parse the request body
-    const { childName, genre, theme } = await req.json();
-    console.log("Received Data:", { childName, genre, theme });
+    // Parse request body
+    const { childName, genre, theme, email } = await req.json();
+    console.log("Received Data:", { childName, genre, theme, email });
 
-    if (!childName || !genre || !theme) {
+    if (!childName || !genre || !theme || !email) {
       console.error("Validation Error: Missing required fields");
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -32,6 +26,7 @@ export async function POST(req: Request) {
     console.log("Creating Stripe Checkout Session...");
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
+      customer_email: email, // Attach email for Stripe records
       line_items: [
         {
           price_data: {
@@ -52,30 +47,23 @@ export async function POST(req: Request) {
 
     console.log("Stripe Checkout Session Created:", session.id);
 
-    // Insert into Supabase using a direct fetch request
+    // Insert into Supabase with email field
     console.log("Inserting Data into Supabase...");
-    const insertResponse = await fetch(`${process.env.SUPABASE_URL}/rest/v1/sessions`, {
-      method: "POST",
-      headers: {
-        apikey: process.env.SUPABASE_ANON_KEY!,
-        Authorization: `Bearer ${process.env.SUPABASE_ANON_KEY}`,
-        "Content-Type": "application/json",
-      },
-      agent: httpsAgent, // Bypass SSL for local development
-      body: JSON.stringify({
+    const { error: supabaseError } = await supabase.from("sessions").insert([
+      {
         session_id: session.id,
         child_name: childName,
-        genre: genre,
-        theme: theme,
-      }),
-    });
+        genre,
+        theme,
+        email, // Populate the email column
+        status: "pending_payment", // Initial status
+      },
+    ]);
 
-    const insertData = await insertResponse.json();
-
-    if (!insertResponse.ok) {
-      console.error("Supabase Insert Error:", insertData);
+    if (supabaseError) {
+      console.error("Supabase Insert Error:", supabaseError.message);
       return NextResponse.json(
-        { error: `Failed to write to Supabase: ${insertData.message || "Unknown error"}` },
+        { error: `Failed to write to Supabase: ${supabaseError.message}` },
         { status: 500 }
       );
     }
@@ -84,13 +72,10 @@ export async function POST(req: Request) {
 
     // Return Stripe Checkout URL
     return NextResponse.json({ url: session.url });
-  } catch (error: unknown) {
-    console.error(
-      "Unexpected Server Error:",
-      error instanceof Error ? error.message : "Unknown error"
-    );
+  } catch (error: any) {
+    console.error("Unexpected Server Error:", error.message || error);
     return NextResponse.json(
-      { error: "Unexpected server error" },
+      { error: `Unexpected server error: ${error.message}` },
       { status: 500 }
     );
   }
