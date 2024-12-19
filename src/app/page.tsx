@@ -1,73 +1,10 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Music, Play, Pause } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-// ExampleSong Component
-function ExampleSong({ name, genre, theme, audioSrc }: { name: string; genre: string; theme: string; audioSrc: string }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  const togglePlayPause = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-0">
-        <div className="grid md:grid-cols-2">
-          <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Sample Song</h3>
-            <div className="space-y-2">
-              <p>
-                <span className="font-semibold">Child&apos;s Name:</span> {name}
-              </p>
-              <p>
-                <span className="font-semibold">Genre:</span> {genre}
-              </p>
-              <p>
-                <span className="font-semibold">Theme:</span> {theme}
-              </p>
-            </div>
-          </div>
-          <div className="bg-white p-8 flex flex-col items-center justify-center space-y-6">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-lg">
-              <Music className="w-16 h-16 text-blue-600" />
-            </div>
-            <audio ref={audioRef} src={audioSrc} />
-            <Button
-              onClick={togglePlayPause}
-              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 px-6 rounded-full flex items-center space-x-2 shadow-md transition-all duration-300 transform hover:scale-105"
-            >
-              {isPlaying ? (
-                <>
-                  <Pause className="w-5 h-5" />
-                  <span>Pause</span>
-                </>
-              ) : (
-                <>
-                  <Play className="w-5 h-5" />
-                  <span>Play Song</span>
-                </>
-              )}
-            </Button>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
 
 export default function LandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -102,11 +39,11 @@ export default function LandingPage() {
       const data = await response.json();
 
       if (response.ok && data.url) {
-        window.location.href = data.url;
+        window.location.href = data.url; // Redirect to Stripe Checkout
       } else {
         setError(data.error || "Failed to create Stripe Checkout session.");
       }
-    } catch {
+    } catch (err) {
       setError("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -114,53 +51,145 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center justify-center p-4">
-      <div className="text-center space-y-6">
-        <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          Kiddoclassics
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center p-8">
+      {/* Hero Section */}
+      <div className="text-center space-y-6 max-w-3xl">
+        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+          Timeless, Personalized Songs for Your Little Ones
         </h1>
-        <p className="text-lg text-gray-600">Create a timeless musical masterpiece for your little one!</p>
+        <p className="text-lg text-gray-600">
+          Create magical melodies that feature your child's name, weaving
+          unforgettable musical stories that will become their lifelong
+          favorites.
+        </p>
         <Button
           onClick={toggleModal}
           className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 shadow-md"
         >
-          Get Started
+          Create Your Child's Classic
         </Button>
       </div>
 
-      <div className="mt-12">
-        <ExampleSong name="Penelope" genre="Lullaby" theme="Adventure" audioSrc="/example-song.mp3" />
+      {/* Features Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        {/* Card 1 */}
+        <Card className="text-center bg-white shadow-lg p-6">
+          <div className="text-yellow-500 mb-4 text-4xl">⭐</div>
+          <h3 className="text-xl font-bold text-gray-800">Perfectly Personalized</h3>
+          <p className="text-gray-600 mt-2">
+            Each song is a unique creation, starring your child as the hero of
+            their own musical adventure.
+          </p>
+        </Card>
+        {/* Card 2 */}
+        <Card className="text-center bg-white shadow-lg p-6">
+          <div className="text-blue-500 mb-4 text-4xl">🎵</div>
+          <h3 className="text-xl font-bold text-gray-800">Diverse Melodies</h3>
+          <p className="text-gray-600 mt-2">
+            From soothing lullabies to educational tunes, find the perfect song
+            for every moment.
+          </p>
+        </Card>
+        {/* Card 3 */}
+        <Card className="text-center bg-white shadow-lg p-6">
+          <div className="text-red-500 mb-4 text-4xl">❤️</div>
+          <h3 className="text-xl font-bold text-gray-800">Cherished Memories</h3>
+          <p className="text-gray-600 mt-2">
+            Create lasting bonds and precious moments with songs your child will
+            treasure for years to come.
+          </p>
+        </Card>
       </div>
 
+      {/* Modal for Form */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
-            <button onClick={toggleModal} className="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+            <button
+              onClick={toggleModal}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+            >
               ✕
             </button>
-            <h2 className="text-xl font-bold text-gray-800 mb-4">Create Your Song</h2>
+            <h2 className="text-xl font-bold text-gray-800 mb-4">
+              Create Your Song
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Child's Name Field */}
               <div className="space-y-2">
-                <Label htmlFor="childName">Child&apos;s Name</Label>
-                <Input id="childName" name="childName" value={formData.childName} onChange={handleInputChange} required />
+                <Label htmlFor="childName" className="text-lg font-medium text-gray-700">
+                  Child's Name
+                </Label>
+                <Input
+                  id="childName"
+                  name="childName"
+                  required
+                  placeholder="Enter your child's name"
+                  className="py-3 rounded-lg"
+                  value={formData.childName}
+                  onChange={handleInputChange}
+                />
               </div>
+
+              {/* Genre Field */}
               <div className="space-y-2">
-                <Label htmlFor="genre">Song Style</Label>
-                <Input id="genre" name="genre" value={formData.genre} onChange={handleInputChange} required />
+                <Label htmlFor="genre" className="text-lg font-medium text-gray-700">
+                  Song Style
+                </Label>
+                <Input
+                  id="genre"
+                  name="genre"
+                  required
+                  placeholder="Enter song style (e.g., Lullaby, Upbeat)"
+                  className="py-3 rounded-lg"
+                  value={formData.genre}
+                  onChange={handleInputChange}
+                />
               </div>
+
+              {/* Theme Field */}
               <div className="space-y-2">
-                <Label htmlFor="theme">Special Theme</Label>
-                <Input id="theme" name="theme" value={formData.theme} onChange={handleInputChange} required />
+                <Label htmlFor="theme" className="text-lg font-medium text-gray-700">
+                  Special Theme
+                </Label>
+                <Input
+                  id="theme"
+                  name="theme"
+                  required
+                  placeholder="e.g., Bedtime, Adventure, Friendship"
+                  className="py-3 rounded-lg"
+                  value={formData.theme}
+                  onChange={handleInputChange}
+                />
               </div>
+
+              {/* Delivery Email Address Field */}
               <div className="space-y-2">
-                <Label htmlFor="email">Delivery Email Address</Label>
-                <Input id="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                <Label htmlFor="email" className="text-lg font-medium text-gray-700">
+                  Delivery Email Address
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Enter the email address where you want to send the song"
+                  className="py-3 rounded-lg"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
               </div>
-              <Button type="submit" className="w-full">
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105"
+              >
                 {loading ? "Creating Session..." : "Create Your Classic"}
               </Button>
-              {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             </form>
+            {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
           </div>
         </div>
       )}
