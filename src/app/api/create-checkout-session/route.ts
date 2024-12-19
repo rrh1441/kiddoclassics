@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { supabase } from "@/lib/supabaseClient";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-04-10",
+  apiVersion: "2024-11-20.acacia", // Corrected API version
 });
 
 export async function POST(req: NextRequest) {
