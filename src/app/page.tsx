@@ -72,32 +72,76 @@ export default function LandingPage() {
 
       {/* Features Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        {/* Card 1 */}
-        <Card className="text-center bg-white shadow-lg p-6">
-          <div className="text-yellow-500 mb-4 text-4xl">⭐</div>
-          <h3 className="text-xl font-bold text-gray-800">Perfectly Personalized</h3>
+        {/* Feature 1 */}
+        <Card className="p-6 text-center shadow-md rounded-lg">
+          <h3 className="text-xl font-bold text-blue-600">Perfectly Personalized</h3>
           <p className="text-gray-600 mt-2">
             Each song is a unique creation, starring your child as the hero of
             their own musical adventure.
           </p>
         </Card>
-        {/* Card 2 */}
-        <Card className="text-center bg-white shadow-lg p-6">
-          <div className="text-blue-500 mb-4 text-4xl">🎵</div>
-          <h3 className="text-xl font-bold text-gray-800">Diverse Melodies</h3>
+        {/* Feature 2 */}
+        <Card className="p-6 text-center shadow-md rounded-lg">
+          <h3 className="text-xl font-bold text-blue-600">Diverse Melodies</h3>
           <p className="text-gray-600 mt-2">
             From soothing lullabies to educational tunes, find the perfect song
             for every moment.
           </p>
         </Card>
-        {/* Card 3 */}
-        <Card className="text-center bg-white shadow-lg p-6">
-          <div className="text-red-500 mb-4 text-4xl">❤️</div>
-          <h3 className="text-xl font-bold text-gray-800">Cherished Memories</h3>
+        {/* Feature 3 */}
+        <Card className="p-6 text-center shadow-md rounded-lg">
+          <h3 className="text-xl font-bold text-blue-600">Cherished Memories</h3>
           <p className="text-gray-600 mt-2">
-            Create lasting bonds and precious moments with songs your child will
-            treasure for years to come.
+            Create lasting bonds and precious moments with songs your child
+            will treasure for years to come.
           </p>
+        </Card>
+      </div>
+
+      {/* Example Song */}
+      <div className="mt-12 max-w-4xl">
+        <Card className="overflow-hidden">
+          <div className="grid md:grid-cols-2">
+            <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">Sample Song - Penelope&#39;s Wild Ride</h3>
+              <div className="space-y-2">
+                <p>
+                  <span className="font-semibold">Name:</span> Penelope
+                </p>
+                <p>
+                  <span className="font-semibold">Genre:</span> Bluegrass
+                </p>
+                <p>
+                  <span className="font-semibold">Theme:</span> Adventure
+                </p>
+              </div>
+            </div>
+            <div className="bg-white p-8 flex flex-col items-center justify-center space-y-6">
+              <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-16 h-16 text-blue-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 19V6l12-3v13M9 10l12-3"
+                  />
+                </svg>
+              </div>
+              <audio controls>
+                <source src="/example-song.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+              <Button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                Play Sample
+              </Button>
+            </div>
+          </div>
         </Card>
       </div>
 
@@ -125,7 +169,6 @@ export default function LandingPage() {
                   name="childName"
                   required
                   placeholder="Enter your child&#39;s name"
-                  className="py-3 rounded-lg"
                   value={formData.childName}
                   onChange={handleInputChange}
                 />
@@ -141,7 +184,6 @@ export default function LandingPage() {
                   name="genre"
                   required
                   placeholder="Enter song style (e.g., Lullaby, Upbeat)"
-                  className="py-3 rounded-lg"
                   value={formData.genre}
                   onChange={handleInputChange}
                 />
@@ -157,13 +199,12 @@ export default function LandingPage() {
                   name="theme"
                   required
                   placeholder="e.g., Bedtime, Adventure, Friendship"
-                  className="py-3 rounded-lg"
                   value={formData.theme}
                   onChange={handleInputChange}
                 />
               </div>
 
-              {/* Delivery Email Address Field */}
+              {/* Email Field */}
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-lg font-medium text-gray-700">
                   Delivery Email Address
@@ -174,7 +215,6 @@ export default function LandingPage() {
                   type="email"
                   required
                   placeholder="Enter the email address where you want to send the song"
-                  className="py-3 rounded-lg"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
@@ -184,7 +224,7 @@ export default function LandingPage() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white"
               >
                 {loading ? "Creating Session..." : "Create Your Classic"}
               </Button>
