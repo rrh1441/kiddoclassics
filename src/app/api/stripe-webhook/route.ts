@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { supabase } from "@/lib/supabaseClient";
-import { Readable } from "stream";
 
 // Configuration to disable body parsing by Next.js for raw webhook body
 export const config = { api: { bodyParser: false } };
 
 // Stripe instance
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-11-20.acacia", // Updated API version
+  apiVersion: "2024-11-20.acacia", // Correct API version
 });
 
 // Helper function to convert request body to a Buffer
