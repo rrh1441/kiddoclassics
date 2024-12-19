@@ -31,11 +31,11 @@ export default function CreateSongPage() {
       const data = await response.json();
 
       if (response.ok && data.url) {
-        window.location.href = data.url; // Redirect to Stripe Checkout
+        window.location.href = data.url;
       } else {
         setError(data.error || "Failed to create Stripe Checkout session.");
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -47,7 +47,7 @@ export default function CreateSongPage() {
       <div className="max-w-4xl w-full space-y-8">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
-            Compose Your Child's Classic
+            Compose Your Child&apos;s Classic
           </h1>
           <p className="text-lg text-gray-600">
             Let’s create a timeless musical masterpiece starring your little one!
@@ -57,10 +57,9 @@ export default function CreateSongPage() {
         <Card className="backdrop-blur-lg bg-white/80 shadow-xl rounded-2xl">
           <CardContent className="p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Child's Name Field */}
               <div className="space-y-2">
                 <Label htmlFor="childName" className="text-lg font-medium text-gray-700">
-                  Child's Name
+                  Child&apos;s Name
                 </Label>
                 <Input
                   id="childName"
@@ -71,7 +70,6 @@ export default function CreateSongPage() {
                 />
               </div>
 
-              {/* Genre Field */}
               <div className="space-y-2">
                 <Label htmlFor="genre" className="text-lg font-medium text-gray-700">
                   Song Style
@@ -85,7 +83,6 @@ export default function CreateSongPage() {
                 />
               </div>
 
-              {/* Theme Field */}
               <div className="space-y-2">
                 <Label htmlFor="theme" className="text-lg font-medium text-gray-700">
                   Special Theme
@@ -99,7 +96,6 @@ export default function CreateSongPage() {
                 />
               </div>
 
-              {/* Delivery Email Address Field */}
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-lg font-medium text-gray-700">
                   Delivery Email Address
@@ -114,7 +110,6 @@ export default function CreateSongPage() {
                 />
               </div>
 
-              {/* Submit Button */}
               <Button
                 type="submit"
                 disabled={loading}

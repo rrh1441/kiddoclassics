@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     console.log("Creating Stripe Checkout Session...");
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      customer_email: email, // Attach email for Stripe records
+      customer_email: email,
       line_items: [
         {
           price_data: {
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
 
     console.log("Stripe Checkout Session Created:", session.id);
 
-    // Insert into Supabase with email field
+    // Insert data into Supabase
     console.log("Inserting Data into Supabase...");
     const { error: supabaseError } = await supabase.from("sessions").insert([
       {
@@ -55,8 +55,8 @@ export async function POST(req: NextRequest) {
         child_name: childName,
         genre,
         theme,
-        email, // Populate the email column
-        status: "pending_payment", // Initial status
+        email,
+        status: "pending_payment",
       },
     ]);
 
