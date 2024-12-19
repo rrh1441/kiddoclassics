@@ -117,33 +117,48 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="bg-white p-8 flex flex-col items-center justify-center space-y-6">
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-16 h-16 text-blue-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 19V6l12-3v13M9 10l12-3"
-                  />
-                </svg>
-              </div>
+              <img
+                src="/thumbnail.png"
+                alt="Thumbnail"
+                className="w-32 h-32 rounded-full shadow-lg"
+              />
               <audio controls>
                 <source src="/example-song.mp3" type="audio/mpeg" />
                 Your browser does not support the audio element.
               </audio>
-              <Button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                Play Sample
-              </Button>
             </div>
           </div>
         </Card>
+
+        {/* Additional CTA */}
+        <div className="text-center mt-6">
+          <Button
+            onClick={toggleModal}
+            className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 shadow-md"
+          >
+            Create Your Song Now
+          </Button>
+        </div>
       </div>
+
+      {/* Footer */}
+      <footer className="mt-12 text-center text-gray-600 text-sm">
+        <p>
+          <a
+            href="/privacy-policy"
+            className="text-blue-500 hover:underline"
+          >
+            Privacy Policy
+          </a>{" "}
+          |{" "}
+          <a
+            href="/terms-of-service"
+            className="text-blue-500 hover:underline"
+          >
+            Terms of Service
+          </a>
+        </p>
+      </footer>
 
       {/* Modal for Form */}
       {isModalOpen && (
