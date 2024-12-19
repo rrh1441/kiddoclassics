@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -43,7 +43,7 @@ export default function LandingPage() {
       } else {
         setError(data.error || "Failed to create Stripe Checkout session.");
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -58,7 +58,7 @@ export default function LandingPage() {
           Timeless, Personalized Songs for Your Little Ones
         </h1>
         <p className="text-lg text-gray-600">
-          Create magical melodies that feature your child's name, weaving
+          Create magical melodies that feature your child&#39;s name, weaving
           unforgettable musical stories that will become their lifelong
           favorites.
         </p>
@@ -66,7 +66,7 @@ export default function LandingPage() {
           onClick={toggleModal}
           className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 shadow-md"
         >
-          Create Your Child's Classic
+          Create Your Child&#39;s Classic
         </Button>
       </div>
 
@@ -118,13 +118,13 @@ export default function LandingPage() {
               {/* Child's Name Field */}
               <div className="space-y-2">
                 <Label htmlFor="childName" className="text-lg font-medium text-gray-700">
-                  Child's Name
+                  Child&#39;s Name
                 </Label>
                 <Input
                   id="childName"
                   name="childName"
                   required
-                  placeholder="Enter your child's name"
+                  placeholder="Enter your child&#39;s name"
                   className="py-3 rounded-lg"
                   value={formData.childName}
                   onChange={handleInputChange}
