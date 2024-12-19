@@ -11,7 +11,12 @@ export async function POST(req: NextRequest) {
 
   try {
     // Parse request body
-    const { childName, genre, theme, email } = await req.json();
+    const { childName, genre, theme, email } = (await req.json()) as {
+      childName: string;
+      genre: string;
+      theme: string;
+      email: string;
+    };
     console.log("Received Data:", { childName, genre, theme, email });
 
     if (!childName || !genre || !theme || !email) {
@@ -26,7 +31,7 @@ export async function POST(req: NextRequest) {
     console.log("Creating Stripe Checkout Session...");
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      customer_email: email,
+      customer_email: email, // Attach email for Stripe records
       line_items: [
         {
           price_data: {
@@ -47,7 +52,7 @@ export async function POST(req: NextRequest) {
 
     console.log("Stripe Checkout Session Created:", session.id);
 
-    // Insert data into Supabase
+    // Insert into Supabase with email field
     console.log("Inserting Data into Supabase...");
     const { error: supabaseError } = await supabase.from("sessions").insert([
       {
@@ -55,8 +60,8 @@ export async function POST(req: NextRequest) {
         child_name: childName,
         genre,
         theme,
-        email,
-        status: "pending_payment",
+        email, // Populate the email column
+        status: "pending_payment", // Initial status
       },
     ]);
 
@@ -72,10 +77,10 @@ export async function POST(req: NextRequest) {
 
     // Return Stripe Checkout URL
     return NextResponse.json({ url: session.url });
-  } catch (error: any) {
-    console.error("Unexpected Server Error:", error.message || error);
+  } catch (error) {
+    console.error("Unexpected Server Error:", (error as Error).message || error);
     return NextResponse.json(
-      { error: `Unexpected server error: ${error.message}` },
+      { error: `Unexpected server error: ${(error as Error).message}` },
       { status: 500 }
     );
   }
