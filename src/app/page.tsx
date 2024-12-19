@@ -31,7 +31,7 @@ function ExampleSong({ name, genre, theme, audioSrc }: { name: string; genre: st
             <h3 className="text-2xl font-bold mb-4">Sample Song</h3>
             <div className="space-y-2">
               <p>
-                <span className="font-semibold">Child's Name:</span> {name}
+                <span className="font-semibold">Child&apos;s Name:</span> {name}
               </p>
               <p>
                 <span className="font-semibold">Genre:</span> {genre}
@@ -141,7 +141,7 @@ export default function LandingPage() {
             <h2 className="text-xl font-bold text-gray-800 mb-4">Create Your Song</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="childName">Child's Name</Label>
+                <Label htmlFor="childName">Child&apos;s Name</Label>
                 <Input id="childName" name="childName" value={formData.childName} onChange={handleInputChange} required />
               </div>
               <div className="space-y-2">
