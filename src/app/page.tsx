@@ -53,7 +53,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center p-8">
       {/* Hero Section */}
-      <div className="text-center space-y-8 max-w-4xl">
+      <div className="text-center space-y-8 max-w-3xl mt-16 py-16">
         <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
           Write a Love Song to Your Little One
         </h1>
@@ -70,7 +70,6 @@ export default function LandingPage() {
 
       {/* Features Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-        {/* Feature 1 */}
         <Card className="p-8 text-center shadow-md rounded-lg">
           <h3 className="text-xl font-bold text-blue-600">Perfectly Personalized</h3>
           <p className="text-gray-600 mt-4">
@@ -78,7 +77,6 @@ export default function LandingPage() {
             their own musical adventure.
           </p>
         </Card>
-        {/* Feature 2 */}
         <Card className="p-8 text-center shadow-md rounded-lg">
           <h3 className="text-xl font-bold text-blue-600">Diverse Melodies</h3>
           <p className="text-gray-600 mt-4">
@@ -86,7 +84,6 @@ export default function LandingPage() {
             for every moment.
           </p>
         </Card>
-        {/* Feature 3 */}
         <Card className="p-8 text-center shadow-md rounded-lg">
           <h3 className="text-xl font-bold text-blue-600">Cherished Memories</h3>
           <p className="text-gray-600 mt-4">
@@ -129,8 +126,6 @@ export default function LandingPage() {
             </div>
           </div>
         </Card>
-
-        {/* Additional CTA */}
         <div className="text-center mt-8">
           <Button
             onClick={toggleModal}
@@ -138,45 +133,6 @@ export default function LandingPage() {
           >
             Create Your Song Now
           </Button>
-        </div>
-      </div>
-
-      {/* Testimonial Section */}
-      <div className="mt-16 bg-gray-100 py-12">
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">
-            Hear From Our Happy Parents
-          </h2>
-          <div className="space-y-8">
-            <blockquote className="text-gray-700 text-lg">
-              Finding gifts that feel truly special is so hard. When I heard my
-              daughter’s song for the first time, I actually teared up. She dances to
-              it every morning, and I know this memory will stay with her forever.
-              <br />
-              <span className="block mt-4 font-bold text-gray-900">
-                — Sarah, mom of a 4-year-old
-              </span>
-            </blockquote>
-            <blockquote className="text-gray-700 text-lg">
-              As a busy mom, I’m always looking for ways to connect with my kids in
-              meaningful ways. This isn’t just a song; it’s part of our story. My son
-              lights up every time he hears it—it’s like our little family anthem.
-              <br />
-              <span className="block mt-4 font-bold text-gray-900">
-                — Emily, mom of two
-              </span>
-            </blockquote>
-            <blockquote className="text-gray-700 text-lg">
-              We’ve tried all the ‘cool toys,’ but they never last. The song we
-              created has become a part of our bedtime routine—it’s the one thing my
-              daughter looks forward to every night. It’s the best gift I’ve ever
-              given her.
-              <br />
-              <span className="block mt-4 font-bold text-gray-900">
-                — Amanda, mom of a 5-year-old
-              </span>
-            </blockquote>
-          </div>
         </div>
       </div>
 
@@ -213,7 +169,6 @@ export default function LandingPage() {
               Create Your Song
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Child's Name Field */}
               <div className="space-y-2">
                 <Label htmlFor="childName" className="text-lg font-medium text-gray-700">
                   Child&#39;s Name
@@ -227,8 +182,6 @@ export default function LandingPage() {
                   onChange={handleInputChange}
                 />
               </div>
-
-              {/* Genre Field */}
               <div className="space-y-2">
                 <Label htmlFor="genre" className="text-lg font-medium text-gray-700">
                   Song Style
@@ -242,8 +195,6 @@ export default function LandingPage() {
                   onChange={handleInputChange}
                 />
               </div>
-
-              {/* Theme Field */}
               <div className="space-y-2">
                 <Label htmlFor="theme" className="text-lg font-medium text-gray-700">
                   Special Theme
@@ -257,8 +208,6 @@ export default function LandingPage() {
                   onChange={handleInputChange}
                 />
               </div>
-
-              {/* Email Field */}
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-lg font-medium text-gray-700">
                   Delivery Email Address
@@ -273,8 +222,6 @@ export default function LandingPage() {
                   onChange={handleInputChange}
                 />
               </div>
-
-              {/* Submit Button */}
               <Button
                 type="submit"
                 disabled={loading}
