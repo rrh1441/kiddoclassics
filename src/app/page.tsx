@@ -71,7 +71,7 @@ export default function LandingPage() {
         <Card className="p-4 text-center shadow-md rounded-lg">
           <h3 className="text-xl font-bold text-blue-600">Perfectly Personalized</h3>
           <p className="text-gray-600 mt-2">
-            Each song is a unique creation, starring your child as the hero of their own musical adventure. 
+            Each song is a unique creation, starring your child as the hero of their own musical adventure.
           </p>
         </Card>
         <Card className="p-4 text-center shadow-md rounded-lg">
