@@ -103,7 +103,7 @@ export default function LandingPage() {
         <Card className="overflow-hidden">
           <div className="grid md:grid-cols-2">
             <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Sample Song - Penelope&#39;s Wild Ride</h3>
+              <h3 className="text-2xl font-bold mb-4">Sample - Penelope&#39;s Wild Ride</h3>
               <div className="space-y-2">
                 <p>
                   <span className="font-semibold">Name:</span> Penelope
