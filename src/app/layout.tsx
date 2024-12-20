@@ -1,7 +1,7 @@
 import "../globals.css"; // Import Tailwind styles
 
 export const metadata = {
-  title: "KiddoClassics",
+  title: "Little Lovesongs",
   description: "Create timeless, personalized songs for your child",
 };
 
