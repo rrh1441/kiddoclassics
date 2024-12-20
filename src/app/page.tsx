@@ -58,9 +58,7 @@ export default function LandingPage() {
           Write a Love Song to Your Little One
         </h1>
         <p className="text-lg text-gray-600">
-          Create magical melodies that feature your child&#39;s name, weaving
-          unforgettable musical stories that will become their lifelong
-          favorites.
+          Turn your favorite stories into unforgettable songs
         </p>
         <Button
           onClick={toggleModal}
@@ -84,7 +82,7 @@ export default function LandingPage() {
         <Card className="p-8 text-center shadow-md rounded-lg">
           <h3 className="text-xl font-bold text-blue-600">Diverse Melodies</h3>
           <p className="text-gray-600 mt-4">
-            From soothing lullabies to educational tunes, find the perfect song
+            From quiet lullabies to rock ballads, find the perfect song
             for every moment.
           </p>
         </Card>
@@ -104,7 +102,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2">
             <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">
-                Sample - Penelope&#39;s Wild Ride
+                Demo - Penelope&#39;s Wild Ride
               </h3>
               <div className="space-y-4">
                 <p>
@@ -114,7 +112,7 @@ export default function LandingPage() {
                   <span className="font-semibold">Genre:</span> Bluegrass
                 </p>
                 <p>
-                  <span className="font-semibold">Theme:</span> Adventure
+                  <span className="font-semibold">Theme:</span> My Toddler Loves Adventure
                 </p>
               </div>
             </div>
