@@ -52,8 +52,8 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center p-8">
-      {/* Hero Section */}
-      <div className="text-center space-y-8 max-w-3xl mt-8 py-8">
+      {/* Hero Section with Increased Top Margin */}
+      <div className="text-center space-y-8 max-w-3xl mt-12">
         <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
           Write a Love Song to Your Little One
         </h1>
