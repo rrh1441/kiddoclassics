@@ -53,45 +53,45 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center p-8">
       {/* Hero Section */}
-      <div className="text-center space-y-6 max-w-3xl">
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+      <div className="text-center space-y-8 max-w-3xl">
+        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
           Timeless, Personalized Songs for Your Little Ones
         </h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-xl text-gray-600">
           Create magical melodies that feature your child&#39;s name, weaving
           unforgettable musical stories that will become their lifelong
           favorites.
         </p>
         <Button
           onClick={toggleModal}
-          className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 shadow-md"
+          className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold text-xl py-4 px-8 rounded-lg transition-transform transform hover:scale-110 shadow-lg"
         >
           Create Your Child&#39;s Classic
         </Button>
       </div>
 
       {/* Features Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
         {/* Feature 1 */}
-        <Card className="p-6 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Perfectly Personalized</h3>
-          <p className="text-gray-600 mt-2">
+        <Card className="p-8 text-center shadow-md rounded-lg">
+          <h3 className="text-2xl font-bold text-blue-600">Perfectly Personalized</h3>
+          <p className="text-gray-600 mt-4 text-lg">
             Each song is a unique creation, starring your child as the hero of
             their own musical adventure.
           </p>
         </Card>
         {/* Feature 2 */}
-        <Card className="p-6 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Diverse Melodies</h3>
-          <p className="text-gray-600 mt-2">
+        <Card className="p-8 text-center shadow-md rounded-lg">
+          <h3 className="text-2xl font-bold text-blue-600">Diverse Melodies</h3>
+          <p className="text-gray-600 mt-4 text-lg">
             From soothing lullabies to educational tunes, find the perfect song
             for every moment.
           </p>
         </Card>
         {/* Feature 3 */}
-        <Card className="p-6 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Cherished Memories</h3>
-          <p className="text-gray-600 mt-2">
+        <Card className="p-8 text-center shadow-md rounded-lg">
+          <h3 className="text-2xl font-bold text-blue-600">Cherished Memories</h3>
+          <p className="text-gray-600 mt-4 text-lg">
             Create lasting bonds and precious moments with songs your child
             will treasure for years to come.
           </p>
@@ -99,12 +99,14 @@ export default function LandingPage() {
       </div>
 
       {/* Example Song */}
-      <div className="mt-12 max-w-4xl">
+      <div className="mt-16 max-w-4xl">
         <Card className="overflow-hidden">
           <div className="grid md:grid-cols-2">
             <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Sample - Penelope&#39;s Wild Ride</h3>
-              <div className="space-y-2">
+              <h3 className="text-3xl font-bold mb-4">
+                Sample Song - Penelope&#39;s Wild Ride
+              </h3>
+              <div className="space-y-4 text-lg">
                 <p>
                   <span className="font-semibold">Name:</span> Penelope
                 </p>
@@ -120,7 +122,7 @@ export default function LandingPage() {
               <img
                 src="/thumbnail.png"
                 alt="Thumbnail"
-                className="w-32 h-32 rounded-full shadow-lg"
+                className="w-36 h-36 rounded-full shadow-lg"
               />
               <audio controls>
                 <source src="/example-song.mp3" type="audio/mpeg" />
@@ -131,10 +133,10 @@ export default function LandingPage() {
         </Card>
 
         {/* Additional CTA */}
-        <div className="text-center mt-6">
+        <div className="text-center mt-8">
           <Button
             onClick={toggleModal}
-            className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 shadow-md"
+            className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-xl py-4 px-8 rounded-lg transition-transform transform hover:scale-110 shadow-lg"
           >
             Create Your Song Now
           </Button>
@@ -142,7 +144,7 @@ export default function LandingPage() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-12 text-center text-gray-600 text-sm">
+      <footer className="mt-16 text-center text-gray-600 text-sm">
         <p>
           <a
             href="/privacy-policy"
@@ -170,10 +172,10 @@ export default function LandingPage() {
             >
               ✕
             </button>
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
               Create Your Song
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Child's Name Field */}
               <div className="space-y-2">
                 <Label htmlFor="childName" className="text-lg font-medium text-gray-700">
@@ -239,7 +241,7 @@ export default function LandingPage() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg py-4 rounded-lg"
               >
                 {loading ? "Creating Session..." : "Create Your Classic"}
               </Button>
