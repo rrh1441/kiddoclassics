@@ -55,7 +55,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <div className="text-center space-y-8 max-w-3xl">
         <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          Timeless, Personalized Songs for Your Little Ones
+          Write a Love Song to Your Little One
         </h1>
         <p className="text-lg text-gray-600">
           Create magical melodies that feature your child&#39;s name, weaving
