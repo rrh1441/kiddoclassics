@@ -148,29 +148,29 @@ export default function LandingPage() {
             Hear From Our Happy Parents
           </h2>
           <div className="space-y-8">
-            <blockquote className="text-gray-700 italic text-lg">
-              “Finding gifts that feel truly special is so hard. When I heard my
+            <blockquote className="text-gray-700 text-lg">
+              Finding gifts that feel truly special is so hard. When I heard my
               daughter’s song for the first time, I actually teared up. She dances to
-              it every morning, and I know this memory will stay with her forever.”
+              it every morning, and I know this memory will stay with her forever.
               <br />
               <span className="block mt-4 font-bold text-gray-900">
                 — Sarah, mom of a 4-year-old
               </span>
             </blockquote>
-            <blockquote className="text-gray-700 italic text-lg">
-              “As a busy mom, I’m always looking for ways to connect with my kids in
+            <blockquote className="text-gray-700 text-lg">
+              As a busy mom, I’m always looking for ways to connect with my kids in
               meaningful ways. This isn’t just a song; it’s part of our story. My son
-              lights up every time he hears it—it’s like our little family anthem.”
+              lights up every time he hears it—it’s like our little family anthem.
               <br />
               <span className="block mt-4 font-bold text-gray-900">
                 — Emily, mom of two
               </span>
             </blockquote>
-            <blockquote className="text-gray-700 italic text-lg">
-              “We’ve tried all the ‘cool toys,’ but they never last. The song we
+            <blockquote className="text-gray-700 text-lg">
+              We’ve tried all the ‘cool toys,’ but they never last. The song we
               created has become a part of our bedtime routine—it’s the one thing my
               daughter looks forward to every night. It’s the best gift I’ve ever
-              given her.”
+              given her.
               <br />
               <span className="block mt-4 font-bold text-gray-900">
                 — Amanda, mom of a 5-year-old
