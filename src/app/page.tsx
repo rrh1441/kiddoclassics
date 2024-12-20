@@ -231,7 +231,7 @@ export default function LandingPage() {
                   name="email"
                   type="email"
                   required
-                  placeholder="Enter the email address where you want to send the song"
+                  placeholder="Email address where we send the song"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
