@@ -51,7 +51,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center p-8">
       {/* Hero Section */}
-      <div className="text-center space-y-4 max-w-5xl mt-6">
+      <div className="text-center space-y-4 max-w-5xl mt-8">
         <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
           Write a Love Song to Your Little One
         </h1>
@@ -134,22 +134,22 @@ export default function LandingPage() {
             Hear From Our Happy Parents
           </h2>
           <div className="space-y-4">
-            <blockquote className="text-gray-700 italic text-lg">
-              “Finding gifts that feel truly special is so hard. When I heard my daughter’s song for the first time, I actually teared up. She dances to it every morning.”
+            <blockquote className="text-gray-700 text-lg">
+              Finding gifts that feel truly special is so hard. When I heard my daughter’s song for the first time, I actually teared up. She dances to it every morning.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Sarah, mom of a 4-year-old
               </span>
             </blockquote>
-            <blockquote className="text-gray-700 italic text-lg">
-              “As a busy mom, I’m always looking for ways to connect. This isn’t just a song; it’s part of our story. My son lights up every time he hears it.”
+            <blockquote className="text-gray-700 text-lg">
+              As a busy mom, I’m always looking for ways to connect. This isn’t just a song; it’s part of our story. My son lights up every time he hears it.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Emily, mom of two
               </span>
             </blockquote>
-            <blockquote className="text-gray-700 italic text-lg">
-              “We’ve tried all the ‘cool toys,’ but they never last. The song we created is part of our bedtime routine—my daughter looks forward to it every night.”
+            <blockquote className="text-gray-700 text-lg">
+              We’ve tried all the ‘cool toys,’ but they never last. The song we created is part of our bedtime routine—my daughter looks forward to it every night.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Amanda, mom of a 5-year-old
