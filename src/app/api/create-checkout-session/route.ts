@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
               name: `Custom Song for ${childName}`,
               description: `A ${genre} song about ${theme}.`,
             },
-            unit_amount: 1999, // $19.99
+            unit_amount: 1000, // $10.00
           },
           quantity: 1,
         },
