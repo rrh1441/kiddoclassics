@@ -49,133 +49,152 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-purple-100 flex flex-col items-center p-8">
+    <div className="bg-slate-50 min-h-screen flex flex-col">
       {/* Hero Section */}
-      <div className="text-center space-y-4 max-w-5xl mt-8">
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          KiddoClassics: Where Your Family&#39;s Stories Come to Life
-        </h1>
-        <p className="text-lg text-gray-600">
-          Transform your child&#39;s special moments into a one-of-a-kind musical experience they&#39;ll cherish forever.
-        </p>
-        {/* Add an image to the hero section */}
-        <div className="flex justify-center my-4">
-          <img
-            src="/hero-image.png" 
-            alt="A happy family enjoying music"
-            className="max-w-full h-auto rounded-lg shadow-md"
-          />
-        </div>
-        {/* Single Testimonial Near the Top */}
-        <blockquote className="italic text-gray-800 text-lg">
-          “My daughter lit up when she heard her name in the song—priceless!”
-        </blockquote>
-        <Button
-          onClick={toggleModal}
-          className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold text-xl py-4 px-8 rounded-lg transition-transform transform hover:scale-105 shadow-lg"
-        >
-          Create Your KiddoClassic Now
-        </Button>
-      </div>
+      <section className="py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto px-4">
+          {/* Hero Text */}
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              KiddoClassics: Where Your Family&#39;s Stories Come to Life
+            </h1>
+            <p className="text-base md:text-lg text-gray-700">
+              Transform your child&#39;s special moments into a one-of-a-kind musical experience they&#39;ll cherish forever.
+            </p>
+            {/* Single Testimonial Near the Top */}
+            <blockquote className="italic text-gray-800 text-base md:text-lg">
+              “My daughter lit up when she heard her name in the song—priceless!”
+            </blockquote>
+            <Button
+              onClick={toggleModal}
+              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold text-lg py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+            >
+              Create Your KiddoClassic Now
+            </Button>
+          </div>
 
-      {/* Bullet points of benefits */}
-      <div className="mt-8 max-w-md mx-auto text-center space-y-2">
-        <ul className="list-disc list-inside text-gray-700 text-lg">
+          {/* Hero Image */}
+          <div className="flex justify-center md:justify-end">
+            <img
+              src="/hero-image.jpg"
+              alt="A happy family enjoying music"
+              className="w-full h-auto max-w-md rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="pb-12 max-w-3xl mx-auto px-4">
+        <ul className="list-disc list-inside text-gray-700 text-base md:text-lg space-y-2">
           <li>Capture your child’s unique personality in a custom tune</li>
           <li>Written &amp; recorded, just for your family</li>
           <li>A keepsake your child will cherish for a lifetime</li>
         </ul>
-      </div>
+      </section>
 
-      {/* Brief Process Overview */}
-      <div className="mt-8 max-w-lg mx-auto">
-        <h2 className="text-2xl font-bold text-blue-600 text-center mb-4">How It Works</h2>
-        <ul className="list-decimal list-inside text-gray-700 space-y-2 text-lg">
-          <li>Tell Us Your Child’s Story (funny anecdotes, favorite activities, unique characteristics)</li>
-          <li>Pick a Musical Style (lullaby, folk, pop—whatever fits your child’s vibe)</li>
-          <li>We Craft the Custom Song and deliver a professionally recorded masterpiece</li>
-        </ul>
-      </div>
+      {/* How It Works */}
+      <section className="py-12 bg-white">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6">
+            How It Works
+          </h2>
+          <ol className="list-decimal list-inside text-gray-700 text-base md:text-lg space-y-2 text-left md:text-center mx-auto">
+            <li>Tell Us Your Child’s Story (funny anecdotes, favorite activities, unique characteristics)</li>
+            <li>Pick a Musical Style (lullaby, folk, pop—whatever fits your child’s vibe)</li>
+            <li>We Craft the Custom Song and deliver a professionally recorded masterpiece</li>
+          </ol>
+        </div>
+      </section>
 
       {/* Features Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 max-w-5xl w-full">
-        <Card className="p-4 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Your Story, Your Way</h3>
-          <p className="text-gray-600 mt-2">
-            Write a unique tale inspired by your child&#39;s quirks, dreams, and adventures—then let us transform it into a beautifully crafted song.
-          </p>
-        </Card>
-        <Card className="p-4 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Melodies for Every Imagination</h3>
-          <p className="text-gray-600 mt-2">
-            From lullabies to energetic folk tunes, pick a style that matches your little one&#39;s personality.
-          </p>
-        </Card>
-        <Card className="p-4 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Bond &amp; Build Memories</h3>
-          <p className="text-gray-600 mt-2">
-            Each KiddoClassic turns everyday moments into treasured keepsakes, fostering a deeper connection between you and your child.
-          </p>
-        </Card>
-      </div>
-
-      {/* Example Song becomes a Testimonial */}
-      <div className="mt-8 max-w-4xl w-full">
-        <Card className="overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-4 text-white">
-              <blockquote className="text-xl italic mb-2">
-                “I wanted to create a song for my adventurous two-year-old Penelope 
-                and she&#39;s obsessed with bluegrass right now.”
-              </blockquote>
-            </div>
-            <div className="bg-white p-4 flex flex-col items-center justify-center space-y-4">
-              <img
-                src="/thumbnail.png"
-                alt="Thumbnail"
-                className="w-24 h-24 rounded-full shadow-lg"
-              />
-              <audio controls>
-                <source src="/example-song.mp3" type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </div>
-        </Card>
-
-        {/* Additional CTA */}
-        <div className="text-center mt-4">
-          <Button
-            onClick={toggleModal}
-            className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-xl py-4 px-8 rounded-lg transition-transform transform hover:scale-105 shadow-lg"
-          >
-            Create Your KiddoClassic Now
-          </Button>
+      <section className="py-12">
+        <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
+            <h3 className="text-xl font-semibold text-indigo-600">
+              Your Story, Your Way
+            </h3>
+            <p className="text-gray-700 mt-2 text-base md:text-lg">
+              Write a unique tale inspired by your child&#39;s quirks, dreams, and adventures—then let us transform it into a beautifully crafted song.
+            </p>
+          </Card>
+          <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
+            <h3 className="text-xl font-semibold text-indigo-600">
+              Melodies for Every Imagination
+            </h3>
+            <p className="text-gray-700 mt-2 text-base md:text-lg">
+              From lullabies to energetic folk tunes, pick a style that matches your little one&#39;s personality.
+            </p>
+          </Card>
+          <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
+            <h3 className="text-xl font-semibold text-indigo-600">
+              Bond &amp; Build Memories
+            </h3>
+            <p className="text-gray-700 mt-2 text-base md:text-lg">
+              Each KiddoClassic turns everyday moments into treasured keepsakes, fostering a deeper connection between you and your child.
+            </p>
+          </Card>
         </div>
-      </div>
+      </section>
 
-      {/* Testimonial Section (longer list) */}
-      <div className="mt-8 bg-gray-100 py-6 w-full">
+      {/* Penelope Testimonial Section */}
+      <section className="py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <Card className="overflow-hidden shadow-lg rounded-lg">
+            <div className="grid md:grid-cols-2">
+              <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 text-white">
+                <blockquote className="text-xl italic mb-2">
+                  “I wanted to create a song for my adventurous two-year-old Penelope and she&#39;s obsessed with bluegrass right now.”
+                </blockquote>
+              </div>
+              <div className="bg-white p-6 flex flex-col items-center justify-center space-y-4">
+                <img
+                  src="/thumbnail.png"
+                  alt="Thumbnail"
+                  className="w-24 h-24 rounded-full shadow-lg"
+                />
+                <audio controls className="w-full">
+                  <source src="/example-song.mp3" type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </Card>
+
+          {/* Additional CTA */}
+          <div className="text-center mt-8">
+            <Button
+              onClick={toggleModal}
+              className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold text-lg py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+            >
+              Create Your KiddoClassic Now
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Hear From Our Happy Parents */}
+      <section className="py-12 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
             Hear From Our Happy Parents
           </h2>
-          <div className="space-y-4">
-            <blockquote className="text-gray-700 text-lg">
+          <div className="space-y-6 text-base md:text-lg text-gray-700">
+            <blockquote>
               Finding gifts that feel truly special is so hard. When I heard my daughter’s song for the first time, I actually teared up. She dances to it every morning.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Sarah, mom of a 4-year-old
               </span>
             </blockquote>
-            <blockquote className="text-gray-700 text-lg">
+            <blockquote>
               As a busy mom, I’m always looking for ways to connect. This isn’t just a song; it’s part of our story. My son lights up every time he hears it.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Emily, mom of two
               </span>
             </blockquote>
-            <blockquote className="text-gray-700 text-lg">
+            <blockquote>
               We’ve tried all the ‘cool toys,’ but they never last. The song we created is part of our bedtime routine—my daughter looks forward to it every night.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
@@ -184,37 +203,49 @@ export default function LandingPage() {
             </blockquote>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* FAQ Section */}
-      <div className="max-w-3xl mx-auto mt-8 px-4">
-        <h2 className="text-2xl font-bold text-blue-600 mb-4">Frequently Asked Questions</h2>
-        <div className="space-y-6 text-gray-700">
-          <div>
-            <h3 className="font-semibold">How long does it take to create?</h3>
-            <p>Most of our songs are ready for download within 10 minutes but they take no longer than an hour.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">How long are the songs?</h3>
-            <p>They&#39;re about two minutes long.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">Can I download the song and keep it forever?</h3>
-            <p>Yes, you&#39;ll receive a digital download once it&#39;s ready.</p>
+      <section className="py-12">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-8 text-base md:text-lg text-gray-700">
+            <div>
+              <h3 className="font-semibold">How long does it take to create?</h3>
+              <p>
+                Most of our songs are ready for download within 10 minutes but they take no longer than an hour.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">How long are the songs?</h3>
+              <p>
+                They&#39;re about two minutes long.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Can I download the song and keep it forever?</h3>
+              <p>
+                Yes, you&#39;ll receive a digital download once it&#39;s ready.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Heartfelt Nudge */}
-      <div className="mt-8 max-w-3xl mx-auto px-4 text-center">
-        <p className="text-lg text-gray-800">
-          Imagine the look on your child’s face the first time they hear their own story set to music. 
-          Let’s make that memory together!
-        </p>
-      </div>
+      <section className="pb-12">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <p className="text-base md:text-lg text-gray-800">
+            Imagine the look on your child’s face the first time they hear their own story set to music.
+            Let’s make that memory together!
+          </p>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="mt-8 text-center text-gray-600 text-sm">
+      <footer className="mt-auto py-6 text-center text-gray-600 text-sm">
         <p>
           <a
             href="/privacy-policy"
@@ -247,7 +278,10 @@ export default function LandingPage() {
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-1">
-                <Label htmlFor="childName" className="text-lg font-medium text-gray-700">
+                <Label
+                  htmlFor="childName"
+                  className="text-base md:text-lg font-medium text-gray-700"
+                >
                   Child&#39;s Name
                 </Label>
                 <Input
@@ -260,7 +294,10 @@ export default function LandingPage() {
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="genre" className="text-lg font-medium text-gray-700">
+                <Label
+                  htmlFor="genre"
+                  className="text-base md:text-lg font-medium text-gray-700"
+                >
                   Song Style
                 </Label>
                 <Input
@@ -273,7 +310,10 @@ export default function LandingPage() {
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="theme" className="text-lg font-medium text-gray-700">
+                <Label
+                  htmlFor="theme"
+                  className="text-base md:text-lg font-medium text-gray-700"
+                >
                   Special Theme
                 </Label>
                 <Input
@@ -286,7 +326,10 @@ export default function LandingPage() {
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="email" className="text-lg font-medium text-gray-700">
+                <Label
+                  htmlFor="email"
+                  className="text-base md:text-lg font-medium text-gray-700"
+                >
                   Delivery Email Address
                 </Label>
                 <Input
@@ -302,7 +345,7 @@ export default function LandingPage() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg py-3 rounded-lg"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg py-3 rounded-lg shadow hover:opacity-90"
               >
                 {loading ? "Creating Session..." : "Create Your KiddoClassic Now"}
               </Button>
