@@ -105,7 +105,7 @@ export default function LandingPage() {
             <li>
               Pick a Musical Style (lullaby, folk, pop—whatever fits your child’s vibe)
             </li>
-            <li>We Craft the Custom Song and deliver a professionally recorded masterpiece</li>
+            <li>We Craft the Custom Song and deliver a masterpiece</li>
           </ol>
         </div>
       </section>
