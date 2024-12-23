@@ -53,37 +53,37 @@ export default function LandingPage() {
       {/* Hero Section */}
       <div className="text-center space-y-4 max-w-5xl mt-8">
         <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          Write a Love Song to Your Little One
+         KiddoClassics: Where Your Family&#39;s Stories Come to Life”
         </h1>
         <p className="text-lg text-gray-600">
-          Turn your favorite stories into unforgettable songs
+        Transform your child&#39;s special moments into a one-of-a-kind musical experience they&#39;ll cherish forever.
         </p>
         <Button
           onClick={toggleModal}
           className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold text-xl py-4 px-8 rounded-lg transition-transform transform hover:scale-105 shadow-lg"
         >
-          Create Your Child&#39;s Classic
+          Create Your KiddoClassic Now
         </Button>
       </div>
 
       {/* Features Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
         <Card className="p-4 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Perfectly Personalized</h3>
+          <h3 className="text-xl font-bold text-blue-600">Your Story, Your Way</h3>
           <p className="text-gray-600 mt-2">
-            Each song is a unique creation, starring your child as the hero of their own musical adventure.
+            Write a unique tale inspired by your child&#39;s quirks, dreams, and adventures—then let us transform it into a beautifully crafted song
           </p>
         </Card>
         <Card className="p-4 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Diverse Melodies</h3>
+          <h3 className="text-xl font-bold text-blue-600">Melodies for Every Imagination</h3>
           <p className="text-gray-600 mt-2">
-            From quiet lullabies to rock ballads, find the perfect song for every moment.
+            From lullabies to energetic folk tunes, pick a style that matches your little one&#39;s personality.
           </p>
         </Card>
         <Card className="p-4 text-center shadow-md rounded-lg">
-          <h3 className="text-xl font-bold text-blue-600">Cherished Memories</h3>
+          <h3 className="text-xl font-bold text-blue-600">Bond & Build Memories</h3>
           <p className="text-gray-600 mt-2">
-            Create lasting bonds and precious moments with songs your child will treasure for years to come.
+           Each KiddoClassic turns everyday moments into treasured keepsakes, fostering a deeper connection between you and your child
           </p>
         </Card>
       </div>
