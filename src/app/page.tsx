@@ -76,7 +76,7 @@ export default function LandingPage() {
           {/* Hero Image */}
           <div className="flex justify-center md:justify-end">
             <img
-              src="/hero-image.jpg"
+              src="/hero-image.png"  {/* <-- Updated to .png */}
               alt="A happy family enjoying music"
               className="w-full h-auto max-w-md rounded-lg shadow-lg"
             />
@@ -100,9 +100,15 @@ export default function LandingPage() {
             How It Works
           </h2>
           <ol className="list-decimal list-inside text-gray-700 text-base md:text-lg space-y-2 text-left md:text-center mx-auto">
-            <li>Tell Us Your Child’s Story (funny anecdotes, favorite activities, unique characteristics)</li>
-            <li>Pick a Musical Style (lullaby, folk, pop—whatever fits your child’s vibe)</li>
-            <li>We Craft the Custom Song and deliver a professionally recorded masterpiece</li>
+            <li>
+              Tell Us Your Child’s Story (funny anecdotes, favorite activities, unique characteristics)
+            </li>
+            <li>
+              Pick a Musical Style (lullaby, folk, pop—whatever fits your child’s vibe)
+            </li>
+            <li>
+              We Craft the Custom Song and deliver a professionally recorded masterpiece
+            </li>
           </ol>
         </div>
       </section>
@@ -115,7 +121,8 @@ export default function LandingPage() {
               Your Story, Your Way
             </h3>
             <p className="text-gray-700 mt-2 text-base md:text-lg">
-              Write a unique tale inspired by your child&#39;s quirks, dreams, and adventures—then let us transform it into a beautifully crafted song.
+              Write a unique tale inspired by your child&#39;s quirks, dreams, and adventures—then let us
+              transform it into a beautifully crafted song.
             </p>
           </Card>
           <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
@@ -123,7 +130,8 @@ export default function LandingPage() {
               Melodies for Every Imagination
             </h3>
             <p className="text-gray-700 mt-2 text-base md:text-lg">
-              From lullabies to energetic folk tunes, pick a style that matches your little one&#39;s personality.
+              From lullabies to energetic folk tunes, pick a style that matches your little one&#39;s
+              personality.
             </p>
           </Card>
           <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
@@ -131,7 +139,8 @@ export default function LandingPage() {
               Bond &amp; Build Memories
             </h3>
             <p className="text-gray-700 mt-2 text-base md:text-lg">
-              Each KiddoClassic turns everyday moments into treasured keepsakes, fostering a deeper connection between you and your child.
+              Each KiddoClassic turns everyday moments into treasured keepsakes, fostering a deeper
+              connection between you and your child.
             </p>
           </Card>
         </div>
@@ -144,7 +153,8 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2">
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 text-white">
                 <blockquote className="text-xl italic mb-2">
-                  “I wanted to create a song for my adventurous two-year-old Penelope and she&#39;s obsessed with bluegrass right now.”
+                  “I wanted to create a song for my adventurous two-year-old Penelope and she&#39;s
+                  obsessed with bluegrass right now.”
                 </blockquote>
               </div>
               <div className="bg-white p-6 flex flex-col items-center justify-center space-y-4">
@@ -181,21 +191,24 @@ export default function LandingPage() {
           </h2>
           <div className="space-y-6 text-base md:text-lg text-gray-700">
             <blockquote>
-              Finding gifts that feel truly special is so hard. When I heard my daughter’s song for the first time, I actually teared up. She dances to it every morning.
+              Finding gifts that feel truly special is so hard. When I heard my daughter’s song for
+              the first time, I actually teared up. She dances to it every morning.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Sarah, mom of a 4-year-old
               </span>
             </blockquote>
             <blockquote>
-              As a busy mom, I’m always looking for ways to connect. This isn’t just a song; it’s part of our story. My son lights up every time he hears it.
+              As a busy mom, I’m always looking for ways to connect. This isn’t just a song; it’s part
+              of our story. My son lights up every time he hears it.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Emily, mom of two
               </span>
             </blockquote>
             <blockquote>
-              We’ve tried all the ‘cool toys,’ but they never last. The song we created is part of our bedtime routine—my daughter looks forward to it every night.
+              We’ve tried all the ‘cool toys,’ but they never last. The song we created is part of our
+              bedtime routine—my daughter looks forward to it every night.
               <br />
               <span className="block mt-2 font-bold text-gray-900">
                 — Amanda, mom of a 5-year-old
@@ -205,40 +218,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-12">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-8 text-base md:text-lg text-gray-700">
-            <div>
-              <h3 className="font-semibold">How long does it take to create?</h3>
-              <p>
-                Most of our songs are ready for download within 10 minutes but they take no longer than an hour.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold">How long are the songs?</h3>
-              <p>
-                They&#39;re about two minutes long.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold">Can I download the song and keep it forever?</h3>
-              <p>
-                Yes, you&#39;ll receive a digital download once it&#39;s ready.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Heartfelt Nudge */}
-      <section className="pb-12">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-base md:text-lg text-gray-800">
+      <section className="pb-12 bg-gradient-to-r from-purple-50 to-white">
+        <div className="max-w-3xl mx-auto px-4 py-8 text-center rounded-lg shadow-sm">
+          <p className="text-base md:text-lg text-gray-800 italic">
             Imagine the look on your child’s face the first time they hear their own story set to music.
+          </p>
+          <p className="text-base md:text-lg text-gray-800 mt-2 italic">
             Let’s make that memory together!
           </p>
         </div>
@@ -247,17 +233,11 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="mt-auto py-6 text-center text-gray-600 text-sm">
         <p>
-          <a
-            href="/privacy-policy"
-            className="text-blue-500 hover:underline"
-          >
+          <a href="/privacy-policy" className="text-blue-500 hover:underline">
             Privacy Policy
           </a>{" "}
           |{" "}
-          <a
-            href="/terms-of-service"
-            className="text-blue-500 hover:underline"
-          >
+          <a href="/terms-of-service" className="text-blue-500 hover:underline">
             Terms of Service
           </a>
         </p>
