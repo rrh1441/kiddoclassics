@@ -229,77 +229,98 @@ export default function LandingPage() {
       {/* Modal for Form */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-4 relative">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
             <button
               onClick={toggleModal}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
             >
               ✕
             </button>
-            <h2 className="text-xl font-bold text-gray-800 mb-4">Create Your Song</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-1">
-                <Label htmlFor="childName" className="text-base md:text-lg font-medium text-gray-700">
-                  Child&#39;s Name
-                </Label>
-                <Input
-                  id="childName"
-                  name="childName"
-                  required
-                  placeholder="Enter your child&#39;s name"
-                  value={formData.childName}
-                  onChange={handleInputChange}
-                />
+
+            {/* Two-column layout on medium+ screens */}
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Left: Form */}
+              <div className="flex-1">
+                <h2 className="text-xl font-bold text-gray-800 mb-4">
+                  Create Your Song
+                </h2>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-1">
+                    <Label htmlFor="childName" className="text-base md:text-lg font-medium text-gray-700">
+                      Child&#39;s Name
+                    </Label>
+                    <Input
+                      id="childName"
+                      name="childName"
+                      required
+                      placeholder="Enter your child&#39;s name"
+                      value={formData.childName}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="genre" className="text-base md:text-lg font-medium text-gray-700">
+                      Song Style
+                    </Label>
+                    <Input
+                      id="genre"
+                      name="genre"
+                      required
+                      placeholder="e.g., Lullaby, Upbeat"
+                      value={formData.genre}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="theme" className="text-base md:text-lg font-medium text-gray-700">
+                      Special Theme
+                    </Label>
+                    <Input
+                      id="theme"
+                      name="theme"
+                      required
+                      placeholder="e.g., Bedtime, Adventure"
+                      value={formData.theme}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="email" className="text-base md:text-lg font-medium text-gray-700">
+                      Delivery Email Address
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Email address where we send the song"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg py-3 rounded-lg shadow hover:opacity-90"
+                  >
+                    {loading ? "Creating Session..." : "Create Your KiddoClassic Now"}
+                  </Button>
+                </form>
+                {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
               </div>
-              <div className="space-y-1">
-                <Label htmlFor="genre" className="text-base md:text-lg font-medium text-gray-700">
-                  Song Style
-                </Label>
-                <Input
-                  id="genre"
-                  name="genre"
-                  required
-                  placeholder="e.g., Lullaby, Upbeat"
-                  value={formData.genre}
-                  onChange={handleInputChange}
-                />
+
+              {/* Right: What You Get */}
+              <div className="flex-1 border-t md:border-t-0 md:border-l border-gray-200 pl-0 md:pl-6 pt-6 md:pt-0">
+                <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-3">
+                  What You Get
+                </h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>~2 minute long KiddoClassic</li>
+                  <li>Digital Download</li>
+                  <li>Delivered in less than an hour</li>
+                </ul>
               </div>
-              <div className="space-y-1">
-                <Label htmlFor="theme" className="text-base md:text-lg font-medium text-gray-700">
-                  Special Theme
-                </Label>
-                <Input
-                  id="theme"
-                  name="theme"
-                  required
-                  placeholder="e.g., Bedtime, Adventure"
-                  value={formData.theme}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="email" className="text-base md:text-lg font-medium text-gray-700">
-                  Delivery Email Address
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Email address where we send the song"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg py-3 rounded-lg shadow hover:opacity-90"
-              >
-                {loading ? "Creating Session..." : "Create Your KiddoClassic Now"}
-              </Button>
-            </form>
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+            </div>
           </div>
         </div>
       )}
