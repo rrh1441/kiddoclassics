@@ -137,12 +137,15 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Penelope Testimonial Section */}
+      {/* Penelope Testimonial Section (with new "Demo - Penelope's Wild Ride" heading) */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4">
           <Card className="overflow-hidden shadow-lg rounded-lg">
             <div className="grid md:grid-cols-2">
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">
+                  Demo - Penelope&#39;s Wild Ride
+                </h3>
                 <blockquote className="text-xl italic mb-2">
                   “I wanted to create a song for my adventurous two-year-old Penelope and she&#39;s
                   obsessed with bluegrass right now.”
