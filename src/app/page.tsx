@@ -59,7 +59,8 @@ export default function LandingPage() {
               KiddoClassics: Where Your Family&#39;s Stories Come to Life
             </h1>
             <p className="text-base md:text-lg text-gray-700">
-              Transform your child&#39;s special moments into a one-of-a-kind musical experience they&#39;ll cherish forever.
+              Transform your child&#39;s special moments into a one-of-a-kind musical experience
+              they&#39;ll cherish forever.
             </p>
             {/* Single Testimonial Near the Top */}
             <blockquote className="italic text-gray-800 text-base md:text-lg">
@@ -76,7 +77,7 @@ export default function LandingPage() {
           {/* Hero Image */}
           <div className="flex justify-center md:justify-end">
             <img
-              src="/hero-image.png"  {/* <-- Updated to .png */}
+              src="/hero-image.png"
               alt="A happy family enjoying music"
               className="w-full h-auto max-w-md rounded-lg shadow-lg"
             />
@@ -96,9 +97,7 @@ export default function LandingPage() {
       {/* How It Works */}
       <section className="py-12 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6">
-            How It Works
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6">How It Works</h2>
           <ol className="list-decimal list-inside text-gray-700 text-base md:text-lg space-y-2 text-left md:text-center mx-auto">
             <li>
               Tell Us Your Child’s Story (funny anecdotes, favorite activities, unique characteristics)
@@ -106,9 +105,7 @@ export default function LandingPage() {
             <li>
               Pick a Musical Style (lullaby, folk, pop—whatever fits your child’s vibe)
             </li>
-            <li>
-              We Craft the Custom Song and deliver a professionally recorded masterpiece
-            </li>
+            <li>We Craft the Custom Song and deliver a professionally recorded masterpiece</li>
           </ol>
         </div>
       </section>
@@ -117,27 +114,21 @@ export default function LandingPage() {
       <section className="py-12">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
-            <h3 className="text-xl font-semibold text-indigo-600">
-              Your Story, Your Way
-            </h3>
+            <h3 className="text-xl font-semibold text-indigo-600">Your Story, Your Way</h3>
             <p className="text-gray-700 mt-2 text-base md:text-lg">
-              Write a unique tale inspired by your child&#39;s quirks, dreams, and adventures—then let us
-              transform it into a beautifully crafted song.
+              Write a unique tale inspired by your child&#39;s quirks, dreams, and adventures—then let
+              us transform it into a beautifully crafted song.
             </p>
           </Card>
           <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
-            <h3 className="text-xl font-semibold text-indigo-600">
-              Melodies for Every Imagination
-            </h3>
+            <h3 className="text-xl font-semibold text-indigo-600">Melodies for Every Imagination</h3>
             <p className="text-gray-700 mt-2 text-base md:text-lg">
               From lullabies to energetic folk tunes, pick a style that matches your little one&#39;s
               personality.
             </p>
           </Card>
           <Card className="p-6 text-center shadow-lg rounded-lg bg-white">
-            <h3 className="text-xl font-semibold text-indigo-600">
-              Bond &amp; Build Memories
-            </h3>
+            <h3 className="text-xl font-semibold text-indigo-600">Bond &amp; Build Memories</h3>
             <p className="text-gray-700 mt-2 text-base md:text-lg">
               Each KiddoClassic turns everyday moments into treasured keepsakes, fostering a deeper
               connection between you and your child.
@@ -186,33 +177,25 @@ export default function LandingPage() {
       {/* Hear From Our Happy Parents */}
       <section className="py-12 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-            Hear From Our Happy Parents
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Hear From Our Happy Parents</h2>
           <div className="space-y-6 text-base md:text-lg text-gray-700">
             <blockquote>
-              Finding gifts that feel truly special is so hard. When I heard my daughter’s song for
-              the first time, I actually teared up. She dances to it every morning.
+              Finding gifts that feel truly special is so hard. When I heard my daughter’s song for the
+              first time, I actually teared up. She dances to it every morning.
               <br />
-              <span className="block mt-2 font-bold text-gray-900">
-                — Sarah, mom of a 4-year-old
-              </span>
+              <span className="block mt-2 font-bold text-gray-900">— Sarah, mom of a 4-year-old</span>
             </blockquote>
             <blockquote>
               As a busy mom, I’m always looking for ways to connect. This isn’t just a song; it’s part
               of our story. My son lights up every time he hears it.
               <br />
-              <span className="block mt-2 font-bold text-gray-900">
-                — Emily, mom of two
-              </span>
+              <span className="block mt-2 font-bold text-gray-900">— Emily, mom of two</span>
             </blockquote>
             <blockquote>
               We’ve tried all the ‘cool toys,’ but they never last. The song we created is part of our
               bedtime routine—my daughter looks forward to it every night.
               <br />
-              <span className="block mt-2 font-bold text-gray-900">
-                — Amanda, mom of a 5-year-old
-              </span>
+              <span className="block mt-2 font-bold text-gray-900">— Amanda, mom of a 5-year-old</span>
             </blockquote>
           </div>
         </div>
@@ -253,15 +236,10 @@ export default function LandingPage() {
             >
               ✕
             </button>
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
-              Create Your Song
-            </h2>
+            <h2 className="text-xl font-bold text-gray-800 mb-4">Create Your Song</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-1">
-                <Label
-                  htmlFor="childName"
-                  className="text-base md:text-lg font-medium text-gray-700"
-                >
+                <Label htmlFor="childName" className="text-base md:text-lg font-medium text-gray-700">
                   Child&#39;s Name
                 </Label>
                 <Input
@@ -274,10 +252,7 @@ export default function LandingPage() {
                 />
               </div>
               <div className="space-y-1">
-                <Label
-                  htmlFor="genre"
-                  className="text-base md:text-lg font-medium text-gray-700"
-                >
+                <Label htmlFor="genre" className="text-base md:text-lg font-medium text-gray-700">
                   Song Style
                 </Label>
                 <Input
@@ -290,10 +265,7 @@ export default function LandingPage() {
                 />
               </div>
               <div className="space-y-1">
-                <Label
-                  htmlFor="theme"
-                  className="text-base md:text-lg font-medium text-gray-700"
-                >
+                <Label htmlFor="theme" className="text-base md:text-lg font-medium text-gray-700">
                   Special Theme
                 </Label>
                 <Input
@@ -306,10 +278,7 @@ export default function LandingPage() {
                 />
               </div>
               <div className="space-y-1">
-                <Label
-                  htmlFor="email"
-                  className="text-base md:text-lg font-medium text-gray-700"
-                >
+                <Label htmlFor="email" className="text-base md:text-lg font-medium text-gray-700">
                   Delivery Email Address
                 </Label>
                 <Input
