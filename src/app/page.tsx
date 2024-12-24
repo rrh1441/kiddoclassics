@@ -318,7 +318,7 @@ export default function LandingPage() {
                   What You Get
                 </h3>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
-                  <li>~2 minute long KiddoClassic</li>
+                  <li>~3 minute long KiddoClassic</li>
                   <li>Digital Download</li>
                   <li>Delivered within 24-48 hours</li>
                 </ul>
