@@ -192,7 +192,7 @@ export default function LandingPage() {
               As a busy mom, I’m always looking for ways to connect. This isn’t just a song; it’s part
               of our story. My son lights up every time he hears it.
               <br />
-              <span className="block mt-2 font-bold text-gray-900">— Emily, mom of two</span>
+              <span className="block mt-2 font-bold text-gray-900">— Martin, dad of two</span>
             </blockquote>
             <blockquote>
               We’ve tried all the ‘cool toys,’ but they never last. The song we created is part of our
