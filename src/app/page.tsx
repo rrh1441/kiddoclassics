@@ -105,7 +105,7 @@ export default function LandingPage() {
             <li>
               Pick a Musical Style (lullaby, folk, pop—whatever fits your child’s vibe)
             </li>
-            <li>We Craft the Custom Song and deliver a masterpiece</li>
+            <li>We Craft the Custom Song and deliver a professionally recorded masterpiece</li>
           </ol>
         </div>
       </section>
@@ -322,6 +322,10 @@ export default function LandingPage() {
                   <li>Digital Download</li>
                   <li>Delivered in less than an hour</li>
                 </ul>
+                {/* Cost */}
+                <p className="text-lg font-semibold text-gray-800 mt-6">
+                  Cost: <span className="text-blue-600">$10 per song</span>
+                </p>
               </div>
             </div>
           </div>
