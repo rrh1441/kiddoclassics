@@ -6,20 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-cookies": "node jobs/checkCookies.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.47.8",
+    "@supabase/supabase-js": "^2.47.10",
     "@vercel/analytics": "^1.4.1",
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
     "classnames": "^2.5.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "lucide-react": "^0.468.0",
     "micro": "^10.0.1",
     "next": "^15.1.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
     "puppeteer": "^23.11.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "stripe": "^17.4.0",
+    "twilio": "^5.4.0",
     "undici": "^7.1.1"
   },
   "devDependencies": {

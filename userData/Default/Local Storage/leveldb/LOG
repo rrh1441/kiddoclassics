@@ -1,0 +1,11 @@
+2024/12/24-12:42:15.830 3b03 Creating DB /Users/ryanheger/kiddoclassics/userData/Default/Local Storage/leveldb since it was missing.
+2024/12/24-12:42:15.864 3b03 Reusing MANIFEST /Users/ryanheger/kiddoclassics/userData/Default/Local Storage/leveldb/MANIFEST-000001
+2024/12/24-12:43:16.751 1107 Level-0 table #5: started
+2024/12/24-12:43:16.759 1107 Level-0 table #5: 36720 bytes OK
+2024/12/24-12:43:16.768 1107 Delete type=0 #3
+2024/12/24-12:44:16.751 3803 Level-0 table #7: started
+2024/12/24-12:44:16.761 3803 Level-0 table #7: 34635 bytes OK
+2024/12/24-12:44:16.772 3803 Delete type=0 #4
+2024/12/24-12:44:22.629 3803 Level-0 table #9: started
+2024/12/24-12:44:22.643 3803 Level-0 table #9: 34694 bytes OK
+2024/12/24-12:44:22.658 3803 Delete type=0 #6
